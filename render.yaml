@@ -3,11 +3,11 @@ services:
     name: salon-queue-api
     runtime: node
     plan: free
-    buildCommand: npm ci && npm run build:server
+    buildCommand: npm install && npm run build:server
     startCommand: node dist/server/server/src/index.js
     healthCheckPath: /api/health
     envVars:
       - key: CLIENT_ORIGIN
-        sync: false
+        value: "*"
       - key: STAFF_PIN
-        sync: false
+        value: "1234"
