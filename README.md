@@ -26,7 +26,8 @@ The UI is custom-crafted with an Obsidian Charcoal & Imperial Gold aesthetic, ty
 
 1. **Clone & Navigate:**
    ```bash
-   cd salon-queue
+   git clone https://github.com/narayann08/salon-queue-management-ITP603-VibeCodingAssignment.git
+   cd salon-queue-management-ITP603-VibeCodingAssignment
    ```
 
 2. **Install Dependencies:**
