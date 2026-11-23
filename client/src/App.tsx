@@ -42,13 +42,20 @@ import type {
 import { languageLabels } from "./i18n";
 import { soundManager } from "./utils/sound";
 
+const defaultProdBackendUrl = "https://salon-queue-api-5q4p.onrender.com";
 const configuredApiUrl = (import.meta.env.VITE_API_URL as string | undefined)?.trim().replace(/\/+$/, "");
-const apiUrl = configuredApiUrl
-  ? configuredApiUrl.endsWith("/api")
-    ? configuredApiUrl
-    : `${configuredApiUrl}/api`
+const effectiveBackendUrl = configuredApiUrl || (import.meta.env.PROD ? defaultProdBackendUrl : "");
+
+const apiUrl = effectiveBackendUrl
+  ? effectiveBackendUrl.endsWith("/api")
+    ? effectiveBackendUrl
+    : `${effectiveBackendUrl}/api`
   : "/api";
-const socketUrl = apiUrl === "/api" ? window.location.origin : apiUrl.replace(/\/api\/?$/, "");
+
+const socketUrl = effectiveBackendUrl
+  ? effectiveBackendUrl.replace(/\/api\/?$/, "")
+  : window.location.origin;
+
 const socketClient = () => io(socketUrl, { transports: ["websocket", "polling"] });
 
 function message(template: string, values: Record<string, string | number>) {
