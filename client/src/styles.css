@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+    color: #F8FAFC;
+    background: #0B0F17;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #0B0F17;
+    background-image: 
+      radial-gradient(at 100% 0%, rgba(212, 160, 23, 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(31, 41, 55, 0.4) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: #F1F5F9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Luxury Gold & Glass Utility Classes */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #FDE68A 0%, #D4A017 50%, #B45309 100%);
+}
+
+.bg-gold-gradient-hover {
+  background: linear-gradient(135deg, #FEF08A 0%, #EAB308 50%, #CA8A04 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FEF08A 0%, #D4A017 60%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(31, 41, 55, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-gold {
+  background: rgba(31, 41, 55, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 160, 23, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 160, 23, 0.6);
+}
+
+/* Accessibility: min tap target */
+button, select, input {
+  min-height: 44px;
+}
