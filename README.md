@@ -1,6 +1,7 @@
 # Salon Queue Management System
 
 **Live demo:** https://salon-queue-aurelia.vercel.app  
+**Backend API:** https://salon-queue-api-5q4p.onrender.com  
 **Hosted on:** Vercel (frontend) + Render (backend)  
 **Staff Access PIN:** `1234`
 
